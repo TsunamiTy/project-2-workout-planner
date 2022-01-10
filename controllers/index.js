@@ -3,7 +3,7 @@ const express = require('express');
 const indexrouter = express.Router();
 
 // ====ROUTES====
-indexrouter.get('/', (req, res) => {
+indexrouter.get('/workouts', (req, res) => {
     res.render('home');
 });
 

@@ -17,7 +17,7 @@ usersrouter.post('/login', (req, res) => {
        if(!isMatched) return res.render('login', {error: 'invalid credentials'});
 
         req.session.user = user._id; 
-        res.redirect('/'); 
+        res.redirect('/workouts'); 
    });
 });
 

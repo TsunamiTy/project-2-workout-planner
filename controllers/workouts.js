@@ -13,3 +13,13 @@ workoutRouter.get('/seed', (req, res) => {
     }
     )
 })
+
+// ====INDEX====
+workoutRouter.get('/', (req, res) => {
+    Workout.find({}, (err, workouts) => {
+        res.render('index', { workouts });
+    });
+});
+
+// ====EXPORTS====
+module.exports = workoutRouter;

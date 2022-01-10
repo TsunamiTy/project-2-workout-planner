@@ -2,18 +2,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const expressSession = require('express-session');
+const app = express();
 
+const workoutsController = require('./controllers/workouts');
 const indexController = require('./controllers/index');
 const usersController = require('./controllers/users');
 
-const app = express();
 
 require('dotenv').config();
 
 app.set('view engine', 'ejs');
 
-const { PORT, DATABASE_URL, SECRET } = process.env;
+const { PORT = 3000, DATABASE_URL, SECRET } = process.env;
 
 // ====DATABASE CONNECTION====
 mongoose.connect(DATABASE_URL);
@@ -28,6 +30,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // ====MIDDLEWARE====
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false}));
+app.use(methodOverride('_method'));
 app.use(expressSession({
     secret: SECRET,
     resave: false,
@@ -39,6 +42,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use('/workouts', workoutsController);
+app.get('/', (req, res) => {
+    res.redirect('/workouts')
+});
 app.use('/', indexController);
 app.use('/', usersController);
 
