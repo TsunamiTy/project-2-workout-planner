@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const expressSession = require('express-session');
 
-const indexController = require('.controllers/index');
-const usersController = require('.controllers/users');
+const indexController = require('./controllers/index');
+const usersController = require('./controllers/users');
 
 const app = express();
 
