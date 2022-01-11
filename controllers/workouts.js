@@ -21,5 +21,31 @@ workoutRouter.get('/', (req, res) => {
     });
 });
 
+// ====NEW====
+
+
+// ====DELETE====
+
+
+// ====UPDATE====
+
+
+// ====CREATE====
+
+
+// ====EDIT====
+
+
+// ====SHOW====
+workoutRouter.get('/:id', (req, res) => {
+    Workout.findById(req.params.id, (err, foundWorkout) => {
+        res.render('show.ejs', {
+            workout: foundWorkout,
+        });
+    });
+});
+
+
+
 // ====EXPORTS====
 module.exports = workoutRouter;

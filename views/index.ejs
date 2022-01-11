@@ -17,15 +17,15 @@
         <a href="/">HOME</a>
     </nav>
     <ul>
-        <% workouts.forEach(workout=> { %>
+        <% workouts.forEach( workout => { %>
             <li>
-                <a href="/workouts/<%= workout._id %>">
+                <a href="/workouts/<%= workout.id %>">
                     <%= workout.name; %>
                 </a>
                 <form action='/workouts/<%= workout.id %>?_method=DELETE' method='POST' style='display:inline; margin-left:16px;'>
                     <input type='submit' value='DELETE' />
                 </form>
-                <a href="/workouts/<%=workout._id %>/edit">Edit</a>
+                <a href="/workouts/<%= workout.id %>/edit">Edit</a>
             </li>
             <% }) %>
     </ul>
