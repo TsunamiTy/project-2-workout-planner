@@ -1,5 +1,7 @@
 // ====DEPENDENCIES====
 const express = require('express');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 const workoutRouter = express.Router();
 const Workout = require('../models/workout');
 
@@ -22,19 +24,42 @@ workoutRouter.get('/', (req, res) => {
 });
 
 // ====NEW====
-
-
+workoutRouter.get('/new', (req, res) => {
+    res.render('new');
+});
 // ====DELETE====
 
 
 // ====UPDATE====
-
+workoutRouter.put('/:id', (req, res) => {
+    Workout.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {
+            new: true,
+        },
+        (error, updateWorkout) => {
+            res.redirect(`/workouts/${req.params.id}`)
+        }
+    )
+})
 
 // ====CREATE====
+workoutRouter.post('/', (req, res) => {
+    Workout.create(req.body, (err, workout) => {
+        res.redirect('/workouts');
+    });
+});
 
 
 // ====EDIT====
-
+workoutRouter.get('/:id/edit', (req, res) => {
+    Workout.findById(req.params.id, (error, foundWorkout) => {
+        res.render('edit.ejs', {
+            workout: foundWorkout,
+        });
+    });
+});
 
 // ====SHOW====
 workoutRouter.get('/:id', (req, res) => {

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Exercise</title>
+  </head>
+
+  <body>
+    <h1>Edit <%= workout.name %></h1>
+    <form action ='/workouts/<%=workout.id%>?_method=PUT' method='POST'>
+      <!--  NOTE: the form is pre-populated with values for the server-->
+      Name: <input type="text" name="name" value="<%=workout.name%>" /><br />
+      Equipment: <input type="text" name="equipment" value="<%=workout.equipment%>" /><br />
+      Reps: <input type="number" name="reps" value='<%=workout.reps%>' /><br />
+      Sets: <input type="number" name="sets" value='<%=workout.sets%>' /><br />
+      <input type="submit" value="Submit Changes" />
+    </form>
+  </body>
+</html>
