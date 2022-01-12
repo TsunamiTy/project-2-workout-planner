@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='/public/css/style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <title>Sign Up Page</title>
 </head>
 <body>
@@ -18,8 +22,10 @@
     </header>
      <h1>Please Sign Up</h1>
      <form action="/signup" method="post">
-         <input type="email" name="email">
+        <label for="email">E-MAIL</label> 
+        <input type="email" name="email">
          <br>
+         <label for="password">PASSWORD</label>
          <input type="password" name="password">
          <br>
          <input type="submit" value="Sign Up">

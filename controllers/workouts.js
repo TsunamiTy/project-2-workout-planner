@@ -28,7 +28,11 @@ workoutRouter.get('/new', (req, res) => {
     res.render('new');
 });
 // ====DELETE====
-
+workoutRouter.delete('/:id', (req, res) => {
+    Workout.findByIdAndDelete(req.params.id, (err, data) => {
+        res.redirect('/workouts');
+    });
+});
 
 // ====UPDATE====
 workoutRouter.put('/:id', (req, res) => {

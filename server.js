@@ -15,7 +15,7 @@ require('dotenv').config();
 
 app.set('view engine', 'ejs');
 
-const { PORT = 3000, DATABASE_URL, SECRET } = process.env;
+const { PORT = 4000, DATABASE_URL, SECRET } = process.env;
 
 // ====DATABASE CONNECTION====
 mongoose.connect(DATABASE_URL);
@@ -31,12 +31,12 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false}));
 app.use(methodOverride('_method'));
+app.use('/public', express.static('public'));
 app.use(expressSession({
     secret: SECRET,
     resave: false,
     saveUninitialized: false,
 }));
-
 app.use(function(req, res, next) {
     console.log('Session Store: ', req.session);
     next();
