@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href='/public/css/style.css'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <title>Edit Exercise</title>
-  </head>
+  <%- include('./partials/head.ejs') %>
 
   <body>
+    <%- include('./partials/header.ejs') %>
     <h1>Edit <%= workout.name %></h1>
     <form action ='/workouts/<%=workout.id%>?_method=PUT' method='POST'>
       <!--  NOTE: the form is pre-populated with values for the server-->

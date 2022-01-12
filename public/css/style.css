@@ -15,11 +15,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
-    color: #FFFEFD;
+    color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(
+        to bottom left,
+        #99B898 0%, #fECEAB 40%, #FF847C 60%, #E84A5F 100%
+    );
+    background-size: 200% 200%;
+    animation: movingGradient 4s linear infinite alternate;
+
 } 
+
+ul {
+    background-color: #2A363B;
+    padding: 20px 20px;
+}
   
+@keyframes movingGradient {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
   header {
       width: 90%;
       margin: auto;
@@ -29,6 +44,71 @@ body {
       font-family: 'Roboto', sans-serif;
       justify-content: space-between;
       box-sizing: border-box;
-      background-color: #FFAC30;
-      padding: .5%;
+      background-color: #2A363B;
+      padding: 10px 10px;
+      cursor: pointer;
   }
+
+ li, nav {
+     font-family: "Montserrat", sans-serif;
+     font-weight: 500;
+     list-style: none;
+     text-decoration: none;
+ }
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-radius: 5px;
+  }
+input[type="submit"] {
+    background-color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[value='Log In'] {
+    background-color: green;
+}
+input[value='Sign Up'] {
+    background-color: green;
+}
+input[value='Submit Changes'] {
+    background-color: green;
+}
+input[value='Add Exercise'] {
+    background-color: green;
+}
+input[value='Add Exercise']:hover {
+    cursor: pointer;
+}
+input[value='x']:hover {
+    cursor: pointer;
+}
+
+
+a:link, a:visited {
+    background-color: #E84A5F;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: #fECEAB;
+  }
+a[name='Logo Link']:link {
+    text-decoration: none;
+    padding: 0px 0px;
+    background-color: none;
+    display: flex;
+    color: none;
+}
+  
