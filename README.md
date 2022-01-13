@@ -1,4 +1,4 @@
-# Workout-planner
+# Workout-Planner
 An application that allows you to sign up and log into your personal account and view, edit, add, and delete exercises.
 
 ## Technologies Used
