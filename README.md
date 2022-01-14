@@ -7,7 +7,7 @@ An application that allows you to sign up and log into your personal account and
 - CSS
 - Node.js
 - Express
-- EJS
+- jQuery
 - MongoDB
 - Mongoose
 - Google Fonts
