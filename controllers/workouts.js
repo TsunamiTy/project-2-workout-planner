@@ -50,7 +50,9 @@ workoutRouter.put('/:id', (req, res) => {
 
 // ====CREATE====
 workoutRouter.post('/', (req, res) => {
+    console.log(req.body)
     Workout.create(req.body, (err, workout) => {
+        console.log(workout)
         res.redirect('/workouts');
     });
 });

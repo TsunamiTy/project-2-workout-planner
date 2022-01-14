@@ -3,19 +3,22 @@
     <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/header.ejs') %>
-    <h1>Standard Workout List</h1>
-    <ul>
+    <h1>Your Workout List</h1>
+    <ul class="wrapper">
         <% workouts.forEach( workout => { %>
             <li>
-                <a href="/workouts/<%= workout.id %>">
+                <a name="index" href="/workouts/<%= workout.id %>">
                     <%= workout.name; %>
                 </a>
-                
-                
+                <p>
+                    Reps: <%= workout.reps; %>
+                    
+                    Sets: <%= workout.sets; %>
+                </p>
             </li>
             <% }) %>
     </ul>
-    <a href="/workouts/new">Add New Exercise</a>
+    <a name="add" href="/workouts/new">Add New Exercise</a>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 label {
-    font-family: 'Oswald';
+    font-family: 'Mukta';
     font-weight: 200;
-    color: red;
+    color: white;
     display: block;
   }
 
@@ -16,21 +16,40 @@ body {
     flex-direction: column;
     align-items: center;
     color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Mukta', sans-serif;
+    font-size: 25px;
     background-image: linear-gradient(
-        to bottom left,
-        #99B898 0%, #fECEAB 40%, #FF847C 60%, #E84A5F 100%
+        to bottom,
+        #bbdefb 0%, #42a5f5 40%, #1e88e5 60%, #0d47a1 100%
     );
     background-size: 200% 200%;
-    animation: movingGradient 4s linear infinite alternate;
+    animation: moving 4s linear infinite alternate;
+    
 
 } 
+p {
+    font-size: 20px;
+    font-family: monospace;
+}
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2A363B;
+    font-family: 'Mukta', sans-serif;
+    font-size: 23.3px;
+    padding: 5px 5px;
+}
 
 ul {
     background-color: #2A363B;
     padding: 20px 20px;
-}
-  
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+} 
 @keyframes movingGradient {
     from { background-position: 0 0; }
     to { background-position: 100% 100%; }
@@ -41,16 +60,18 @@ ul {
       height: 10vh;
       display: flex;
       align-items: center;
+      flex-direction: row;
       font-family: 'Roboto', sans-serif;
+      font-style: oblique;
       justify-content: space-between;
-      box-sizing: border-box;
-      background-color: #2A363B;
+      background-color: whitesmoke;
       padding: 10px 10px;
       cursor: pointer;
+      color: #1874dc;
   }
 
  li, nav {
-     font-family: "Montserrat", sans-serif;
+     font-family: "Mukta", sans-serif;
      font-weight: 500;
      list-style: none;
      text-decoration: none;
@@ -71,12 +92,15 @@ input {
 input[type="submit"] {
     background-color: red;
     font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 input[value='Log In'] {
     background-color: green;
+    cursor: pointer;
 }
 input[value='Sign Up'] {
     background-color: green;
+    cursor: pointer;
 }
 input[value='Submit Changes'] {
     background-color: green;
@@ -93,22 +117,51 @@ input[value='x']:hover {
 
 
 a:link, a:visited {
-    background-color: #E84A5F;
-    color: white;
-    padding: 14px 25px;
+    /* background-color: #1976d2; */
+    color: #bbdefb;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
   }
   
   a:hover, a:active {
-    background-color: #fECEAB;
+    background-color: #bbdefb;
+    color: black;
   }
+
+
 a[name='Logo Link']:link {
     text-decoration: none;
     padding: 0px 0px;
     background-color: none;
     display: flex;
     color: none;
+}
+
+@media (max-width: 500px) {
+    header {
+       font-size: 12px;
+       margin-top: 0px;
+       line-height: 30px;
+    }
+    body {
+       font-size: 20px;
+       margin: 20px 0 30px 0;
+    }
+    div {
+       margin: 20px 12px 0 12px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        flex-wrap:nowrap;
+        font-size: 12px;
+        padding: 0;
+
+    }
+ 
 }
   

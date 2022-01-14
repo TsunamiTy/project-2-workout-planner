@@ -37,6 +37,7 @@ usersrouter.post('/signup', (req, res) => {
     });
 });
 
+// ====LOG OUT ROUTES====
 
 usersrouter.get('/logout', (req, res) => {
     req.session.destroy(function() {
