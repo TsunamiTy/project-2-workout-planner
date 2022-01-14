@@ -15,11 +15,12 @@ An application that allows you to sign up and log into your personal account and
 
 ## Screenshots
 
-![]()
+![](https://i.imgur.com/RPPIBeQ.png)
+![](https://i.imgur.com/ThgtgZ5.png)
 
 ## Getting Started
 Sign up and then log in. After that, have fun setting up your custom workout routine! 
-Click [Here]() to launch the app!
+Click [Here](https://workout-planner-project-2.herokuapp.com/workouts) to launch the app!
 
 ## Future Enhancements
 - Adding a Home page
