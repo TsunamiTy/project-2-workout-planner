@@ -5,7 +5,10 @@
     <%- include('./partials/header.ejs') %>
     <div>
     <h1><%= workout.name %> Exercise Details</h1>
-    <img src='<%=workout.img%>.jpg'/>
+    
+        <img src=<%=workout.img%> >
+    
+    <!-- <img src='<%=workout.img%>jpg' > -->
    
     <p>Equipment: <%= workout.equipment %></p>
     <p>Reps: <%= workout.reps %></p>

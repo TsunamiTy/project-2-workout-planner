@@ -3,7 +3,7 @@ const workoutSeed = [{
     equipment: 'Bodyweight',
     reps: '15',
     sets: '3',
-    img: 'https://imgur.com/dgJCnvB',
+    img: 'https://imgur.com/dgJCnvB.jpg',
 },
 {
     name: 'Close Grip Bench Press',
