@@ -23,10 +23,14 @@ body {
         #bbdefb 0%, #42a5f5 40%, #1e88e5 60%, #0d47a1 100%
     );
     background-size: 200% 200%;
-    animation: moving 4s linear infinite alternate;
+    animation: movingGradient 5s linear infinite alternate;
     
-
+    
 } 
+@keyframes movingGradient {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
 p {
     font-size: 20px;
     font-family: monospace;
@@ -50,10 +54,7 @@ ul {
     grid-row-end: 3;
 
 } 
-@keyframes movingGradient {
-    from { background-position: 0 0; }
-    to { background-position: 100% 100%; }
-}
+
   header {
       width: 90%;
       margin: auto;
